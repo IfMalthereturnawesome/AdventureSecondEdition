@@ -23,7 +23,7 @@ public class Adventure {
                 "should get OUT!", Direction.NOEXIT, 5, 1, Direction.NOEXIT));
         map.add(new Room("Room 4 ", "Welcome to the last door!," +
                 " NOT!", 0, 6, Direction.NOEXIT, Direction.NOEXIT));
-        map.add(new Room("Room 5 ", "Wait! How! You did man!" +
+        map.add(new Room("Room 5 ", "Wait! How! You did it man!" +
                 " no jokes!", Direction.NOEXIT, 7, Direction.NOEXIT, Direction.NOEXIT));
         map.add(new Room("Room 6 ", "Great, you are getting further" +
                 " away. Just give it up!", 2, 8, Direction.NOEXIT, Direction.NOEXIT));
