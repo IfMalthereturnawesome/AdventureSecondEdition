@@ -8,7 +8,7 @@ public class Adventure {
     public static void main(String[] args) {
         Adventure adventure = new Adventure();
         adventure.welcomeScreen();
-
+        adventure.ready();
         Room room1 = new Room("Room 1 ", "The place you wish you could stay at");
         Room room2 = new Room("Room 2 ", "You will stay here forever");
         Room room3 = new Room("Room 3 ", "I always liked this room, that is why you should get OUT!");
@@ -21,7 +21,7 @@ public class Adventure {
 
 
         room1.setE(room2);
-        room2.setW(room3);
+        room2.setE(room3);
         room3.setS(room6);
         room4.setN(room1);
         room5.setS(room8);
@@ -32,46 +32,72 @@ public class Adventure {
         room4.setS(room7);
 
         Room currentRoom = room1;
-
+        int count = 0;
         while (true) {
             String userin = adventure.userInput();
-            if (userin.equalsIgnoreCase("go north")) {
-            if (currentRoom.getN() != null) {
+
+            if (userin.equalsIgnoreCase("go north")||userin.equalsIgnoreCase("n")) {
+                if (currentRoom.getN() != null) {
                     currentRoom = currentRoom.getN();
                     System.out.println("You are now in " + currentRoom);
-                } else
+                    count++;
+                } else {
                     System.out.println("you cant go this way");
+                    count++;
+                }
+
             }
 
-            if (userin.equalsIgnoreCase("go south")) {
+            if (userin.equalsIgnoreCase("go south")||userin.equalsIgnoreCase("s")) {
                 if (currentRoom.getS() != null) {
                     currentRoom = currentRoom.getS();
                     System.out.println("You are now in " + currentRoom);
-                } else
+                    count++;
+                } else {
                     System.out.println("You cant go this way");
+                    count++;
+                }
+
             }
 
-            if (userin.equalsIgnoreCase("go east")) {
+            if (userin.equalsIgnoreCase("go east")||userin.equalsIgnoreCase("e")) {
                 if (currentRoom.getE() != null) {
                     currentRoom = currentRoom.getE();
                     System.out.println("You are now in " + currentRoom);
-                } else
+                    count++;
+                } else {
                     System.out.println("You cant go this way");
+                    count++;
+                }
+
             }
 
-            if (userin.equalsIgnoreCase("go west")|| userin.equalsIgnoreCase("west")) {
+            if (userin.equalsIgnoreCase("go west") || userin.equalsIgnoreCase("w")) {
                 if (currentRoom.getW() != null) {
                     currentRoom = currentRoom.getW();
-                    System.out.println("You are now in " +currentRoom);
-                } else
+                    System.out.println("You are now in " + currentRoom);
+                    count++;
+                } else {
                     System.out.println("You cant got this way");
+                    count++;
+                }
+
             }
 
             if (currentRoom == room5) {
                 System.out.println("You won bitch");
+                if (count > 5) {
+                    System.out.println("Are your parrents decending from turtles? - Becasue that was slooooow \n"
+                            + "it took you " + count
+                            + "  tries to get to the last room");
+                    System.out.println("Bye bye!");
+                    System.exit(1);
+                } else
+                    System.out.println("That was quick! You only took " + count + " attemps");
+                System.out.println("Bye bye!");
                 System.exit(1);
             }
-            if (userin.equalsIgnoreCase("exit")|| userin.equalsIgnoreCase("quit")) {
+            if (userin.equalsIgnoreCase("exit") || userin.equalsIgnoreCase("quit")) {
                 System.out.println("why give up now? ");
                 System.exit(2);
             }
@@ -89,10 +115,10 @@ public class Adventure {
 
     public void welcomeScreen() {
         System.out.println("Finally! Your help is required over here!\nWe had to put you in Room 1, for safety.\nYou " +
-                "need to get out of here before its too late! You can either go north, south, west or east\n");
+                "need to get out of here before its too late! You can either go north, south, west or east");
     }
 
-    public String userInput(){
+    public String userInput() {
         Scanner input = new Scanner(System.in);
 
         return input.nextLine();
