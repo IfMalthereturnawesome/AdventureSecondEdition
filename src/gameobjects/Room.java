@@ -12,7 +12,6 @@ public class Room extends Thing {
 
     }
 
-
     public Room getN() {
         return n;
     }
