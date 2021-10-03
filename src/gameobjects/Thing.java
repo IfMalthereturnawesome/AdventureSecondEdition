@@ -3,8 +3,7 @@ package gameobjects;
 
 public class Thing {
 
-    private String name;
-    private String description;
+    private String name, description;
 
     public Thing(String aName, String aDescription) {
 
@@ -23,6 +22,14 @@ public class Thing {
     public String getDescription() {
         return description;
     }
+
+    public String toString(){
+        return name + " " + description;
+    }
+
+
+
+
 
     public void setDescription(String aDescription) {
         this.description = aDescription;
