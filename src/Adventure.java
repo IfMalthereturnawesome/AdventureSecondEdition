@@ -41,7 +41,6 @@ public class Adventure {
                     System.out.println("You are now in " + currentRoom);
                 } else
                     System.out.println("you cant go this way");
-
             }
 
             if (userin.equalsIgnoreCase("go south")) {
@@ -71,6 +70,17 @@ public class Adventure {
             if (currentRoom == room5) {
                 System.out.println("You won bitch");
                 System.exit(1);
+            }
+            if (userin.equalsIgnoreCase("exit")|| userin.equalsIgnoreCase("quit")) {
+                System.out.println("why give up now? ");
+                System.exit(2);
+            }
+            if (userin.equalsIgnoreCase("help")) {
+                adventure.help();
+            }
+            if (userin.equalsIgnoreCase("look")) {
+                System.out.println("Well, I think you might be in " + currentRoom);
+
             }
 
         }

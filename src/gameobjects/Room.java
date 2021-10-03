@@ -19,7 +19,7 @@ public class Room extends Thing {
 
     public void setN(Room n) {
         this.n = n;
-        this.n.s = this;
+        this.n.s = (this);
     }
 
     public Room getS() {
@@ -28,7 +28,7 @@ public class Room extends Thing {
 
     public void setS(Room s) {
         this.s = s;
-        this.s.n = this;
+        this.s.n = (this);
     }
 
     public Room getE() {
@@ -37,7 +37,7 @@ public class Room extends Thing {
 
     public void setE(Room e) {
         this.e = e;
-        this.e.w = this;
+        this.e.w = (this);
     }
 
     public Room getW() {
@@ -46,12 +46,7 @@ public class Room extends Thing {
 
     public void setW(Room w) {
         this.w = w;
-        this.w.e = this;
+        this.w.e = (this);
     }
-
-
-
-
-
 
 }
