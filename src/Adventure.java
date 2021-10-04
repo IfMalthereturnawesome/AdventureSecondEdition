@@ -20,16 +20,16 @@ public class Adventure {
         Room room9 = new Room("Room 9 ", "Im getting tired of this, just give it up! Type Exit");
 
 
-        room1.setE(room2);
-        room2.setE(room3);
-        room3.setS(room6);
-        room4.setN(room1);
-        room5.setS(room8);
-        room6.setN(room3);
-        room7.setE(room8);
-        room8.setE(room9);
-        room9.setN(room6);
-        room4.setS(room7);
+        room1.setEast(room2);
+        room2.setEast(room3);
+        room3.setSouth(room6);
+        room4.setNorth(room1);
+        room5.setSouth(room8);
+        room6.setNorth(room3);
+        room7.setEast(room8);
+        room8.setEast(room9);
+        room9.setNorth(room6);
+        room4.setSouth(room7);
 
         Room currentRoom = room1;
         int count = 0;
@@ -37,8 +37,8 @@ public class Adventure {
             String userin = adventure.userInput();
 
             if (userin.equalsIgnoreCase("go north")||userin.equalsIgnoreCase("n")) {
-                if (currentRoom.getN() != null) {
-                    currentRoom = currentRoom.getN();
+                if (currentRoom.getNorth() != null) {
+                    currentRoom = currentRoom.getNorth();
                     System.out.println("You are now in " + currentRoom);
                     count++;
                 } else {
@@ -49,8 +49,8 @@ public class Adventure {
             }
 
             if (userin.equalsIgnoreCase("go south")||userin.equalsIgnoreCase("s")) {
-                if (currentRoom.getS() != null) {
-                    currentRoom = currentRoom.getS();
+                if (currentRoom.getSouth() != null) {
+                    currentRoom = currentRoom.getSouth();
                     System.out.println("You are now in " + currentRoom);
                     count++;
                 } else {
@@ -61,8 +61,8 @@ public class Adventure {
             }
 
             if (userin.equalsIgnoreCase("go east")||userin.equalsIgnoreCase("e")) {
-                if (currentRoom.getE() != null) {
-                    currentRoom = currentRoom.getE();
+                if (currentRoom.getEast() != null) {
+                    currentRoom = currentRoom.getEast();
                     System.out.println("You are now in " + currentRoom);
                     count++;
                 } else {
@@ -73,8 +73,8 @@ public class Adventure {
             }
 
             if (userin.equalsIgnoreCase("go west") || userin.equalsIgnoreCase("w")) {
-                if (currentRoom.getW() != null) {
-                    currentRoom = currentRoom.getW();
+                if (currentRoom.getWest() != null) {
+                    currentRoom = currentRoom.getWest();
                     System.out.println("You are now in " + currentRoom);
                     count++;
                 } else {

@@ -2,50 +2,50 @@ package gameobjects;
 
 
 public class Room extends Thing {
-    private Room n;
-    private Room s;
-    private Room w;
-    private Room e;
+    private Room north;
+    private Room south;
+    private Room west;
+    private Room east;
 
     public Room(String aName, String aDesciption){
         super(aName,aDesciption);
 
     }
 
-    public Room getN() {
-        return n;
+    public Room getNorth() {
+        return north;
     }
 
-    public void setN(Room n) {
-        this.n = n;
-        this.n.s = (this);
+    public void setNorth(Room north) {
+        this.north = north;
+        this.north.south = this;
     }
 
-    public Room getS() {
-        return s;
+    public Room getSouth() {
+        return south;
     }
 
-    public void setS(Room s) {
-        this.s = s;
-        this.s.n = (this);
+    public void setSouth(Room south) {
+        this.south = south;
+        this.south.north = this;
     }
 
-    public Room getE() {
-        return e;
+    public Room getEast() {
+        return east;
     }
 
-    public void setE(Room e) {
-        this.e = e;
-        this.e.w = (this);
+    public void setEast(Room east) {
+        this.east = east;
+        this.east.west = this;
     }
 
-    public Room getW() {
-        return w;
+    public Room getWest() {
+        return west;
     }
 
-    public void setW(Room w) {
-        this.w = w;
-        this.w.e = (this);
+    public void setWest(Room west) {
+        this.west = west;
+        this.west.east = this;
     }
 
 }
